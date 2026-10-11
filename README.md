@@ -60,6 +60,18 @@ cmake --build --preset release
 - `Ctrl+Enter` — send request
 - `Ctrl+H` — toggle History / Collections
 
+## Releases
+
+Pushing a `v*` tag (for example `v0.1.0`) runs GitHub Actions, builds a Linux x86_64 archive, and attaches it to the GitHub Release for that tag:
+
+`requestman-<tag>-linux-x86_64.tar.gz`
+
+Extract the archive and run `./requestman` from that directory. The executable loads `assets/` and the bundled libraries beside it, so leave that layout in place.
+
+The archive includes libcurl-impersonate and SQLite. The host needs a desktop graphics stack (OpenGL and X11, and Wayland client libraries when the session uses Wayland) and glibc from Ubuntu 24.04 or newer.
+
+The version string inside the app comes from `PROJECT_VERSION` in `CMakeLists.txt`. The archive name uses the git tag.
+
 ## Security
 
 - TLS peer/host verification is enabled by default (toggleable in Settings)
