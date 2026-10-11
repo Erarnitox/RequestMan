@@ -133,7 +133,7 @@ jobs:
 
           archive="dist/${name}.tar.gz"
           tar -C dist -czf "${archive}" "${name}"
-          tar -tzf "${archive}" | grep -Fxq "${name}/requestman"
+          tar -tzf "${archive}" "${name}/requestman" >/dev/null
 
       - name: Publish GitHub release
         env:
