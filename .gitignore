@@ -1,0 +1,40 @@
+# Build
+build/
+release/
+cmake-build-*/
+out/
+.cache/
+compile_commands.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.clangd/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local data / secrets
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+.env
+.env.*
+credentials.json
+*.pem
+*.key
+
+# Generated / temp
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.log
+/tmp/

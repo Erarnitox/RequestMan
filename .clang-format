@@ -1,0 +1,29 @@
+BasedOnStyle: LLVM
+Language: Cpp
+Standard: c++23
+IndentWidth: 2
+TabWidth: 2
+UseTab: Never
+ColumnLimit: 100
+AccessModifierOffset: -2
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakTemplateDeclarations: Yes
+BreakBeforeBraces: Attach
+BreakBeforeBinaryOperators: NonAssignment
+ContinuationIndentWidth: 2
+NamespaceIndentation: None
+ReflowComments: false
+DerivePointerAlignment: false
+PointerAlignment: Left
+SpaceAfterCStyleCast: false
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeParens: Never
+SortIncludes: CaseSensitive
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '^".*'
+    Priority: 1
+  - Regex: '^<.*'
+    Priority: 2

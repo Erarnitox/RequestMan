@@ -1,0 +1,7 @@
+add_library(requestman_platform paths.cpp)
+add_library(requestman::platform ALIAS requestman_platform)
+
+target_include_directories(requestman_platform PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_compile_features(requestman_platform PUBLIC cxx_std_23)
+requestman_set_warnings(requestman_platform)
+requestman_enable_sanitizers(requestman_platform)

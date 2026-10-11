@@ -1,0 +1,7 @@
+add_library(requestman_logging logging.cpp)
+add_library(requestman::logging ALIAS requestman_logging)
+
+target_include_directories(requestman_logging PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_compile_features(requestman_logging PUBLIC cxx_std_23)
+requestman_set_warnings(requestman_logging)
+requestman_enable_sanitizers(requestman_logging)
