@@ -126,6 +126,9 @@ function(requestman_setup_curl_impersonate)
 endfunction()
 
 # Copy shared library (and SONAME links) next to a runtime binary.
+# PRE_LINK, not POST_BUILD: catch_discover_tests runs the test binary in a
+# post-build step. A build that uses the install RPATH ($ORIGIN only) cannot
+# see the deps tree, so the SONAME must already sit beside the executable.
 function(requestman_copy_curl_impersonate_runtime target_name)
   if(NOT REQUESTMAN_WITH_CURL_IMPERSONATE)
     return()
@@ -133,7 +136,7 @@ function(requestman_copy_curl_impersonate_runtime target_name)
   if(NOT REQUESTMAN_CURL_IMPERSONATE_LIB_DIR)
     return()
   endif()
-  add_custom_command(TARGET ${target_name} POST_BUILD
+  add_custom_command(TARGET ${target_name} PRE_LINK
     COMMAND ${CMAKE_COMMAND} -E copy_directory
             "${REQUESTMAN_CURL_IMPERSONATE_LIB_DIR}"
             "$<TARGET_FILE_DIR:${target_name}>/curl-impersonate-runtime"
