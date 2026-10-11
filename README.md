@@ -62,7 +62,7 @@ cmake --build --preset release
 
 ## Releases
 
-Pushing a `v*` or `V*` tag (for example `v0.1.0` or `V0.1.0`) runs GitHub Actions, builds a Linux x86_64 archive, and attaches it to the GitHub Release for that tag:
+Pushing a `V*` tag (for example `V0.1.0`) runs GitHub Actions, builds a Linux x86_64 archive, and attaches it to the GitHub Release for that tag:
 
 `requestman-<tag>-linux-x86_64.tar.gz`
 
