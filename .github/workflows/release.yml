@@ -1,12 +1,9 @@
-# Publishes a Linux x86_64 archive when a v* tag is pushed.
-# The workflow file must be present in the tagged commit.
-
 name: Release
 
 on:
   push:
     tags:
-      - "v*"
+      - "V*"
 
 permissions:
   contents: write
