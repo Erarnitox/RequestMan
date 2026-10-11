@@ -2,6 +2,8 @@
 
 Native cross-platform HTTP API client written in modern **C++23**.
 
+![screenshot](assets/screenshot.png)
+
 ## Features
 
 - Request editor for GET/POST/PUT/PATCH/DELETE/HEAD/OPTIONS
